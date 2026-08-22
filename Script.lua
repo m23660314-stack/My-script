@@ -5,7 +5,7 @@ local gui = Instance.new("ScreenGui")
 gui.Name = "MyGui"
 gui.Parent = player:WaitForChild("PlayerGui")
 
-local part1 = game.Workspace:WaitForChild("Items"):WaitForChild("Berry"):WaitForChild("Handle")
+--local part1 = game.Workspace:WaitForChild("Items"):WaitForChild("Berry"):WaitForChild("Handle")
 
 
 
@@ -169,19 +169,19 @@ end)
 
 
 local yes = true
-local folder = game.Workspace:WaitForChild("Items")
 
+
+local folder = game.Workspace:WaitForChild("AreaEggSlotsClint")
 
 button.MouseButton1Click:Connect(function()
 	
-	for i, Log in pairs(folder:GetChildren()) do
-		if Log.Name == "Log" then
-			local main = Log:FindFirstChild("Main")
-			main.CFrame = rootPart.CFrame * CFrame.new(0,5,0)
-			main.Anchored = false
+	for i, v in pairs(folder:GetChildren()) do
+		local Part1 = v:WaitForChild("Part")
+		if Part1  then
+			Part1.CFrame = rootPart.CFrame
 		end
-		
 	end
+
 	
 	
 
