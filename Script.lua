@@ -76,7 +76,7 @@ close.Parent = frame
 local button = Instance.new("TextButton")
 button.Size = UDim2.new(0, 175, 0, 63)
 button.Position = UDim2.new(0.5, -87, 0.08, 48)
-button.Text = "get log"
+button.Text = "destroy!!"
 button.TextSize = 14
 button.BorderSizePixel = 0
 button.Parent = frame
@@ -171,16 +171,12 @@ end)
 local yes = true
 
 
-local folder = game.Workspace:WaitForChild("AreaEggSlotsClint")
 
 button.MouseButton1Click:Connect(function()
 	
-	for i, v in pairs(folder:GetChildren()) do
-		local Part1 = v:WaitForChild("Part")
-		if Part1  then
-			Part1.CFrame = rootPart.CFrame
-		end
-	end
+	local baseplate = game.Workspace:WaitForChild("Baseplate")
+	baseplate:Destroy()
+	
 
 	
 	
