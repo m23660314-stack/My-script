@@ -184,7 +184,16 @@ button.MouseButton1Click:Connect(function()
 		local handle = Berry:FindFirstChild("Handle")
 		if handle then
 			handle.CFrame = rootPart.CFrame * CFrame.new(0,5,0)
+			handle.Anchored = false
 		end
+		
+
+		for _, Bolt in ipairs(folder:GetChildren()) do
+			local handle = Bolt:FindFirstChild("Main")
+			if handle then
+				handle.CFrame = rootPart.CFrame * CFrame.new(0,5,0)
+				handle.Anchored = false
+			end
 	end
 	
 	
