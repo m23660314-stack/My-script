@@ -154,8 +154,8 @@ maximize.MouseButton1Click:Connect(function()
 		minimize.Visible = false
 
 
-		
-		
+
+
 	else
 		frame.Size = normalSize
 		button.Size = normalsizee
@@ -163,7 +163,7 @@ maximize.MouseButton1Click:Connect(function()
 		made.Position = madeposition
 		made.Size = madesize
 		minimize.Visible = true
-		
+
 	end
 end)
 
@@ -173,55 +173,24 @@ local folder = game.Workspace:WaitForChild("Items")
 
 
 button.MouseButton1Click:Connect(function()
-	--button.Visible = false
-	--button1.Visible = true
-	--yes = false
 	
-	part1.CFrame = rootPart.CFrame * CFrame.new(0,5,0)
-	part1.Anchored = false
-	
-	for _, Berry in ipairs(folder:GetChildren()) do
-		local handle = Berry:FindFirstChild("Handle")
-		if handle then
-			handle.CFrame = rootPart.CFrame * CFrame.new(0,5,0)
-			handle.Anchored = false
+	for i, Log in pairs(folder:GetChildren()) do
+		local main = Log:FindFirstChild("Main")
+		if main then
+			main.CFrame = rootPart.CFrame * CFrame.new(0,5,0)
+			main.Anchored = false
 		end
 		
-
-		for _, Bolt in ipairs(folder:GetChildren()) do
-			local handle = Bolt:FindFirstChild("Main")
-			if handle then
-				handle.CFrame = rootPart.CFrame * CFrame.new(0,5,0)
-				handle.Anchored = false
-			end
 	end
 	
 	
-	
-	
-	
-	
-	--if yes == false then
-		--while task.wait(0.01) do
-			--part.Position = rootPart.Position + Vector3.new(0,-3, 0)
-		--end
-	--end
+
+
+
 
 end)
 
---button1.MouseButton1Click:Connect(function()
-	--button.Visible = true
-	--button1.Visible = false
-	--yes = true
-	--if yes == true then
-		--while task.wait(0.01) do
-			--part.Position = Vector3.new(100,0,100)
-		--end
-		
-	--end
-	
-	
---end)
+
 
 
 
@@ -231,7 +200,7 @@ if yes == true  then
 	while task.wait(0.5) do
 		button.BackgroundColor3 = Color3.fromRGB(math.random(1,255) , math.random(1,255) , math.random(1,255))
 	end
-	
+
 end
 
 
