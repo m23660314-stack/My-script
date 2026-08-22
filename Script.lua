@@ -169,13 +169,29 @@ end)
 
 
 local yes = true
+local folder = game.Workspace:WaitForChild("Items")
+
 
 button.MouseButton1Click:Connect(function()
 	--button.Visible = false
 	--button1.Visible = true
 	--yes = false
+	
 	part1.CFrame = rootPart.CFrame * CFrame.new(0,5,0)
 	part1.Anchored = false
+	
+	for _, Berry in ipairs(folder:GetChildren()) do
+		local handle = Berry:FindFirstChild("Handle")
+		if handle then
+			handle.CFrame = rootPart.CFrame * CFrame.new(0,5,0)
+		end
+	end
+	
+	
+	
+	
+	
+	
 	--if yes == false then
 		--while task.wait(0.01) do
 			--part.Position = rootPart.Position + Vector3.new(0,-3, 0)
@@ -208,3 +224,5 @@ if yes == true  then
 	end
 	
 end
+
+
