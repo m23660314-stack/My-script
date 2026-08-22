@@ -76,7 +76,7 @@ close.Parent = frame
 local button = Instance.new("TextButton")
 button.Size = UDim2.new(0, 175, 0, 63)
 button.Position = UDim2.new(0.5, -87, 0.08, 48)
-button.Text = "idk just press"
+button.Text = "get log"
 button.TextSize = 14
 button.BorderSizePixel = 0
 button.Parent = frame
@@ -175,8 +175,8 @@ local folder = game.Workspace:WaitForChild("Items")
 button.MouseButton1Click:Connect(function()
 	
 	for i, Log in pairs(folder:GetChildren()) do
-		local main = Log:FindFirstChild("Main")
-		if main then
+		if Log.Name == "Log" then
+			local main = Log:FindFirstChild("Main")
 			main.CFrame = rootPart.CFrame * CFrame.new(0,5,0)
 			main.Anchored = false
 		end
