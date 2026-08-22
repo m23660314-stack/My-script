@@ -5,6 +5,10 @@ local gui = Instance.new("ScreenGui")
 gui.Name = "MyGui"
 gui.Parent = player:WaitForChild("PlayerGui")
 
+local part1 = game.Workspace:WaitForChild("Items"):WaitForChild("Berry"):WaitForChild("Handle")
+
+
+
 
 -- Main window
 local frame = Instance.new("Frame")
@@ -167,30 +171,32 @@ end)
 local yes = true
 
 button.MouseButton1Click:Connect(function()
-	button.Visible = false
-	button1.Visible = true
-	yes = false
-	if yes == false then
-		while task.wait(0.01) do
-			part.Position = rootPart.Position + Vector3.new(0,-3, 0)
-		end
-	end
+	--button.Visible = false
+	--button1.Visible = true
+	--yes = false
+	part1.CFrame = rootPart.CFrame * CFrame.new(0,5,0)
+	part1.Anchored = false
+	--if yes == false then
+		--while task.wait(0.01) do
+			--part.Position = rootPart.Position + Vector3.new(0,-3, 0)
+		--end
+	--end
 
 end)
 
-button1.MouseButton1Click:Connect(function()
-	button.Visible = true
-	button1.Visible = false
-	yes = true
-	if yes == true then
-		while task.wait(0.01) do
-			part.Position = Vector3.new(100,0,100)
-		end
+--button1.MouseButton1Click:Connect(function()
+	--button.Visible = true
+	--button1.Visible = false
+	--yes = true
+	--if yes == true then
+		--while task.wait(0.01) do
+			--part.Position = Vector3.new(100,0,100)
+		--end
 		
-	end
+	--end
 	
 	
-end)
+--end)
 
 
 
@@ -202,5 +208,3 @@ if yes == true  then
 	end
 	
 end
-
-
