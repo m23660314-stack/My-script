@@ -77,9 +77,9 @@ local Input = MainTab:CreateInput({
 	PlaceholderText = "Jumpower",
 	RemoveTextAfterFocusLost = false,
 	Flag = "Input1",
-	Callback = function(Text)
+	Callback = function(number)
 		
-		game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").JumpPower = (Text)
+		game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").JumpPower = (number)
 		
 	end,
 })
@@ -97,3 +97,23 @@ local Dropdown = MainTab:CreateDropdown({
 	end,
 })
 
+local Toggle = MainTab:CreateToggle({
+	Name = "Infinite Jump",
+	CurrentValue = false,
+	Flag = "Toggle1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+		local UserInputService = game:GetService("UserInputService")
+		local Players = game:GetService("Players")
+
+		local player = Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local humanoid = character:WaitForChild("Humanoid")
+
+		UserInputService.JumpRequest:Connect(function()
+			humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+		end)
+
+	end,
+	
+	
+})
