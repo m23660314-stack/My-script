@@ -67,6 +67,33 @@ local Slider = MainTab:CreateSlider({
 	Flag = "Slider1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 	Callback = function(Value)
 		
-		game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = Value
+		game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = (Value)
 	end,
 })
+
+local Input = MainTab:CreateInput({
+	Name = "jump",
+	CurrentValue = "32",
+	PlaceholderText = "Jumpower",
+	RemoveTextAfterFocusLost = false,
+	Flag = "Input1",
+	Callback = function(Text)
+		
+		game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").JumpPower = (Text)
+		
+	end,
+})
+
+
+local Dropdown = MainTab:CreateDropdown({
+	Name = "rang",
+	Options = {"sor", "shin" ,"zar"},
+	CurrentOption = {"sor"},
+	MultipleOptions = false,
+	Flag = "Dropdown1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Options)
+		
+		print(Options)
+	end,
+})
+
