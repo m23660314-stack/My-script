@@ -40,3 +40,22 @@ local Window = Rayfield:CreateWindow({
 })
 
 local MainTab = Window:CreateTab("🏠 Main", nil) -- Title, Image
+local Section = MainTab:CreateSection("main")
+
+
+Rayfield:Notify({
+	Title = "you execute script",
+	Content = "welcome ",
+	Duration = 3,
+	Image = nil,
+})
+
+local Button = MainTab:CreateButton({
+	Name = "Kill Ur Self",
+	Callback = function()
+		local player = game.Players.LocalPlayer
+		if player then
+			player.Character.humanoid.Health = 0
+		end
+	end,
+})
