@@ -89,4 +89,28 @@ local Button = MainTab:CreateButton({
 	end,
 })
 
-local Label = MainTab:CreateLabel("nza", nil, Color3.fromRGB(36, 255, 24), false) -- Title, Icon, Color, IgnoreTheme
+
+local teleportTab = Window:CreateTab("Teleports", nil) -- Title, Image
+
+local Label = teleportTab:CreateLabel("to de blocke dayne jhake o de teleport be blocke", nil, Color3.fromRGB(218, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+local Label = teleportTab:CreateLabel("hndak yarya shol nakt !", nil, Color3.fromRGB(218, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+
+local Button = teleportTab:CreateButton({
+	Name = "blocke dayna ",
+	Callback = function()
+		local part = Instance.new("Part")
+		part.Parent = workspace
+		part.Anchored = true
+		part.CanCollide = false
+		part.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+		part.Name = "Parttt"
+		
+	end,
+})
+
+local Button = teleportTab:CreateButton({
+	Name = "teleport be blocke ",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.Position = workspace.Parttt.Position
+	end,
+})
