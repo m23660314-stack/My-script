@@ -126,8 +126,8 @@ local Dropdown = settingTab:CreateDropdown({
 	MultipleOptions = false,
 	Flag = "Dropdown1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 	Callback = function(Options)
-		if Options == "DarkBlue" then
-			Window:SetTheme("DarkBlue")
+		if Options[1] == "DarkBlue" then
+			Rayfield:SetTheme("DarkBlue")
 	end
 	end,
 })
