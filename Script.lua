@@ -1,4 +1,3 @@
-
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
 	Name = "My hub",
@@ -117,3 +116,21 @@ local Toggle = MainTab:CreateToggle({
 	
 	
 })
+
+local settingTab = Window:CreateTab("⚙️ Settings", nil) -- Title, Image
+
+local Dropdown = settingTab:CreateDropdown({
+	Name = "Themes",
+	Options = {"DarkBlue", "Option 2"},
+	CurrentOption = {"Option 1"},
+	MultipleOptions = false,
+	Flag = "Dropdown1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Options)
+		if Options == "DarkBlue" then
+			Window:SetTheme("DarkBlue")
+	end
+	end,
+})
+
+
+
