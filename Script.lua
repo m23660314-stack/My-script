@@ -121,14 +121,19 @@ local settingTab = Window:CreateTab("⚙️ Settings", nil) -- Title, Image
 
 local Dropdown = settingTab:CreateDropdown({
 	Name = "Themes",
-	Options = {"DarkBlue", "Option 2"},
-	CurrentOption = {"Option 1"},
+	Options = {"DarkBlue", "default"},
+	CurrentOption = {"default"},
 	MultipleOptions = false,
 	Flag = "Dropdown1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 	Callback = function(Options)
 		if Options[1] == "DarkBlue" then
 			Rayfield:SetTheme("DarkBlue")
-	end
+			
+			
+		end
+		if Options[1] == "default" then
+			Rayfield:SetTheme("default")
+		end
 	end,
 })
 
