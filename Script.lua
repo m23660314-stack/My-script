@@ -54,8 +54,6 @@ local Button = MainTab:CreateButton({
 	Name = "Kill Ur Self",
 	Callback = function()
 		local player = game.Players.LocalPlayer
-		if player then
-			player.Character.humanoid.Health = 0
-		end
+		player.Character.humanoid.Health = 0
 	end,
 })
