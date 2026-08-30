@@ -1,8 +1,8 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
-	Name = "My hub",
+	Name = "MHKZ hub",
 	Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
-	LoadingTitle = "loading My hub",
+	LoadingTitle = "loading MHKZ hub",
 	LoadingSubtitle = "by MHKZ",
 	ShowText = "Rayfield", -- for mobile users to unhide Rayfield, change if you'd like
 	Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
@@ -28,9 +28,9 @@ local Window = Rayfield:CreateWindow({
 
 	KeySystem = true, -- Set this to true to use our key system
 	KeySettings = {
-		Title = "My hub | Key",
+		Title = "MHKZ hub | Key",
 		Subtitle = "by MHKZ",
-		Note = "Only owner have the Key !!", -- Use this to tell the user how to get a key
+		Note = "Btne xodane scripte key ye hay ", -- Use this to tell the user how to get a key
 		FileName = "Key", -- It is recommended to use something unique, as other scripts using Rayfield may overwrite your key file
 		SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
 		GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
@@ -38,97 +38,55 @@ local Window = Rayfield:CreateWindow({
 	}
 })
 
-local MainTab = Window:CreateTab("🏠 Main", nil) -- Title, Image
-local Section = MainTab:CreateSection("main")
-
-
 Rayfield:Notify({
-	Title = "you execute script",
-	Content = "welcome ",
-	Duration = 3,
+	Title = "Xerhati bo scripta ma",
+	Content = "Xerhati bo scripta maa",
+	Duration = 5,
 	Image = nil,
 })
 
+local MainTab = Window:CreateTab("Player ta", nil) -- Title, Image
+local Section = MainTab:CreateSection("hame tshten pidve bo player ta dvere dana")
+local Section = MainTab:CreateSection("raqame halbjera na 7arfa !")
+
+local Input = MainTab:CreateInput({
+	Name = "Sr3a ta",
+	CurrentValue = "16",
+	PlaceholderText = "raqame !",
+	RemoveTextAfterFocusLost = false,
+	Flag = "Input1",
+	Callback = function(Text)
+		game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = (Text)
+	end,
+})
+
+
+local Input = MainTab:CreateInput({
+	Name = "jump a ta",
+	CurrentValue = "32",
+	PlaceholderText = "raqame !",
+	RemoveTextAfterFocusLost = false,
+	Flag = "Input1",
+	Callback = function(Text)
+		game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").JumpPower = (Text)
+	end,
+})
+
+
+local Section = MainTab:CreateSection("Xoina player ta ")
 local Button = MainTab:CreateButton({
-	Name = "Kill Ur Self",
+	Name = "Xwa koshtn",
 	Callback = function()
 		game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Health = 0
 	end,
 })
 
 
-local Slider = MainTab:CreateSlider({
-	Name = "Walkspeed",
-	Range = {0, 500},
-	Increment = 1,
-	Suffix = " Speed",
-	CurrentValue = 16,
-	Flag = "Slider1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-	Callback = function(Value)
-		
-		game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = (Value)
+local Button = MainTab:CreateButton({
+	Name = "Fol krna xoina xwa ",
+	Callback = function()
+		game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Health = 100
 	end,
 })
 
-local Input = MainTab:CreateInput({
-	Name = "jump",
-	CurrentValue = "32",
-	PlaceholderText = "Jumpower",
-	RemoveTextAfterFocusLost = false,
-	Flag = "Input1",
-	Callback = function(number)
-		
-		game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").JumpPower = (number)
-		
-	end,
-})
-
-
-local Dropdown = MainTab:CreateDropdown({
-	Name = "rang",
-	Options = {"sor", "shin" ,"zar"},
-	CurrentOption = {"sor"},
-	MultipleOptions = false,
-	Flag = "Dropdown1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-	Callback = function(Options)
-		
-		print(Options)
-	end,
-})
-
-local Toggle = MainTab:CreateToggle({
-	Name = "Infinite Jump",
-	CurrentValue = false,
-	Flag = "Toggle1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-	Callback = function(Value)
-		local UserInputService = game:GetService("UserInputService")
-		local Players = game:GetService("Players")
-
-		local player = Players.LocalPlayer
-		local character = player.Character or player.CharacterAdded:Wait()
-		local humanoid = character:WaitForChild("Humanoid")
-
-		UserInputService.JumpRequest:Connect(function()
-			humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
-		end)
-
-	end,
-	
-	
-})
-
-local settingTab = Window:CreateTab("⚙️ Settings", nil) -- Title, Image
-
-local Dropdown = settingTab:CreateDropdown({
-	Name = "Themes",
-	Options = {"default","DarkBlue"},
-	CurrentOption = {"default"},
-	MultipleOptions = false,
-	Flag = "Dropdown1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-	Callback = function(Options)
-		Rayfield:ChangeTheme(Options[1])
-	end,
-})
-
-
-
+local Label = MainTab:CreateLabel("nza", nil, Color3.fromRGB(36, 255, 24), false) -- Title, Icon, Color, IgnoreTheme
