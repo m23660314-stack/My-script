@@ -2,7 +2,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
 	Name = "My hub",
 	Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
-	LoadingTitle = " My hub",
+	LoadingTitle = "loading My hub",
 	LoadingSubtitle = "by MHKZ",
 	ShowText = "Rayfield", -- for mobile users to unhide Rayfield, change if you'd like
 	Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
@@ -121,12 +121,12 @@ local settingTab = Window:CreateTab("⚙️ Settings", nil) -- Title, Image
 
 local Dropdown = settingTab:CreateDropdown({
 	Name = "Themes",
-	Options = {"DarkBlue", "default"},
+	Options = {"default","DarkBlue"},
 	CurrentOption = {"default"},
 	MultipleOptions = false,
 	Flag = "Dropdown1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 	Callback = function(Options)
-		Rayfield:SetTheme(Options)
+		Rayfield:ChangeTheme(Options[1])
 	end,
 })
 
