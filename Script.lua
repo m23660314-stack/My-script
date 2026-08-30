@@ -53,7 +53,6 @@ Rayfield:Notify({
 local Button = MainTab:CreateButton({
 	Name = "Kill Ur Self",
 	Callback = function()
-		local player = game.Players.LocalPlayer
-		player.Character.humanoid.Health = 0
+		game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Health = 0
 	end,
 })
