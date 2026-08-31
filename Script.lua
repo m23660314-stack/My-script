@@ -129,7 +129,7 @@ local goal = {
 local Button = teleportTab:CreateButton({
 	Name = "Bche nk blocke",
 	Callback = function()
-		local tween = tweenService:Create(game.Workspace.Parttt,tweenInfo,goal)
+		local tween = tweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,tweenInfo,goal)
 		tween:Play()
 	end,
 })
