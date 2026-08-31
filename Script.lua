@@ -89,6 +89,43 @@ local Button = MainTab:CreateButton({
 	end,
 })
 
+local runservice = game:GetService("RunService")
+
+local noclip = false
+
+local Toggle = MainTab:CreateToggle({
+	Name = "Dnav diwara ra bche",
+	CurrentValue = false,
+	Flag = "Toggle1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+		noclip = (Value)
+
+	end,
+})
+
+runservice.Stepped:Connect(function()
+	if noclip then
+		local char = game.Players.LocalPlayer.Character
+		
+		if char then
+			for _, part in ipairs(char:GetDescendants()) do
+				if part:IsA("BasePart") then
+					part.CanCollide = false
+				end
+				
+			end
+		end
+	end
+end)
+
+
+
+
+
+
+
+
+--teleport tab--------------------------------
 
 local teleportTab = Window:CreateTab("Teleports", nil) -- Title, Image
 
@@ -120,7 +157,7 @@ local Button = teleportTab:CreateButton({
 })
 
 local tweenService = game:GetService("TweenService")
-local tweenInfo = TweenInfo.new(5)
+local tweenInfo = TweenInfo.new(4)
 
 
 
@@ -137,3 +174,4 @@ local Button = teleportTab:CreateButton({
 		tween:Play()
 	end,
 })
+
