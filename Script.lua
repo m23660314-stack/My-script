@@ -100,7 +100,7 @@ local part = Instance.new("Part")
 part.Parent = workspace
 part.Anchored = true
 part.CanCollide = false
-part.Name = "Parttt"
+part.Name = "PartttT"
 
 
 local Button = teleportTab:CreateButton({
@@ -122,7 +122,7 @@ local Button = teleportTab:CreateButton({
 local tweenService = game:GetService("TweenService")
 local tweenInfo = TweenInfo.new(5)
 local goal = {
-	Position = game.Workspace.Parttt.Position
+	Position = game.Workspace.PartttT.Position
 }
 
 
