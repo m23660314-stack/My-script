@@ -89,9 +89,13 @@ local Button = MainTab:CreateButton({
 	end,
 })
 
+local Paragraph = MainTab:CreateParagraph({Title = "waxte to dnav dywara da bche b tamrene pshte chand sanya de tamrt !", Content = ""})
+
 local runservice = game:GetService("RunService")
 
 local noclip = false
+
+local Section = MainTab:CreateSection("Hndak tshtet de ")
 
 local Toggle = MainTab:CreateToggle({
 	Name = "Dnav diwara ra bche",
@@ -102,6 +106,8 @@ local Toggle = MainTab:CreateToggle({
 
 	end,
 })
+
+
 
 runservice.Stepped:Connect(function()
 	if noclip then
