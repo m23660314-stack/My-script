@@ -118,3 +118,18 @@ local Button = teleportTab:CreateButton({
 		game.Players.LocalPlayer.Character.HumanoidRootPart.Position = workspace.Parttt.Position
 	end,
 })
+
+local tweenService = game:GetService("TweenService")
+local tweenInfo = TweenInfo.new(5)
+local goal = {
+	Position = game.Workspace.Parttt.Position
+}
+
+
+local Button = MainTab:CreateButton({
+	Name = "Bche nk blocke",
+	Callback = function()
+		local tween = tweenService:Create(game.Workspace.Parttt,tweenInfo,goal)
+		tween:Play()
+	end,
+})
