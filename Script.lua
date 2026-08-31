@@ -96,17 +96,17 @@ local Label = teleportTab:CreateLabel("to de blocke dayne jhake o de teleport be
 local Label = teleportTab:CreateLabel("hndak yarya shol nakt !", nil, Color3.fromRGB(218, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
 
-local part = Instance.new("Part")
-part.Parent = workspace
-part.Anchored = true
-part.CanCollide = false
-part.Name = "PartttT"
+local partama = Instance.new("Part")
+partama.Parent = workspace
+partama.Anchored = true
+partama.CanCollide = false
+
 
 
 local Button = teleportTab:CreateButton({
 	Name = "blocke dayna ",
 	Callback = function()
-		part.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+		partama.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
 
 		
 	end,
@@ -115,21 +115,25 @@ local Button = teleportTab:CreateButton({
 local Button = teleportTab:CreateButton({
 	Name = "teleport be blocke ",
 	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.Position = workspace.Parttt.Position
+		game.Players.LocalPlayer.Character.HumanoidRootPart.Position = partama.Position
 	end,
 })
 
 local tweenService = game:GetService("TweenService")
 local tweenInfo = TweenInfo.new(5)
-local goal = {
-	Position = game.Workspace.PartttT.Position
-}
+
 
 
 local Button = teleportTab:CreateButton({
 	Name = "Bche nk blocke",
 	Callback = function()
+		local goal = {
+			
+			Position = partama.Position
+			
+		}
 		local tween = tweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,tweenInfo,goal)
+		
 		tween:Play()
 	end,
 })
