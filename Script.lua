@@ -107,17 +107,16 @@ runservice.Stepped:Connect(function()
 	if noclip then
 		local char = game.Players.LocalPlayer.Character
 		
-		if char then
+		if not char then return end
 			for _, part in ipairs(char:GetDescendants()) do
 				if part:IsA("BasePart") then
-					part.CanCollide = false
+					part.CanCollide = not noclip
 				end
 				
 			end
 		end
 	end
 end)
-
 
 
 
