@@ -89,7 +89,7 @@ local Button = MainTab:CreateButton({
 	end,
 })
 
-local Paragraph = MainTab:CreateParagraph({Title = "waxte to dnav dywara da bche b tamrene pshte chand sanya de tamrt !", Content = ""})
+
 
 local runservice = game:GetService("RunService")
 
@@ -106,6 +106,7 @@ local Toggle = MainTab:CreateToggle({
 
 	end,
 })
+local Paragraph = MainTab:CreateParagraph({Title = "waxte to dnav dywara da bche b tamrene pshte chand sanya de tamrt !", Content = ""})
 
 
 
@@ -125,6 +126,17 @@ runservice.Stepped:Connect(function()
 end)
 
 
+local Slider = MainTab:CreateSlider({
+	Name = "Nezeke o deratya camere",
+	Range = {0, 250},
+	Increment = 1,
+	Suffix = "",
+	CurrentValue = 70,
+	Flag = "Slider1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+		game.Workspace.CurrentCamera.FieldOfView = Value
+	end,
+})
 
 
 
@@ -134,7 +146,7 @@ end)
 
 local teleportTab = Window:CreateTab("Teleports", nil) -- Title, Image
 
-local Label = teleportTab:CreateLabel("to de blocke dayne jhake o de teleport be blocke", nil, Color3.fromRGB(218, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+local Label = teleportTab:CreateLabel("to de blocke dayne jhake o de teleport be blocke", nil, Color3.fromRGB(66, 218, 24), false) -- Title, Icon, Color, IgnoreTheme
 local Label = teleportTab:CreateLabel("hndak yarya shol nakt !", nil, Color3.fromRGB(218, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
 
