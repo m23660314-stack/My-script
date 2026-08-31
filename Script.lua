@@ -126,7 +126,7 @@ local goal = {
 }
 
 
-local Button = MainTab:CreateButton({
+local Button = teleportTab:CreateButton({
 	Name = "Bche nk blocke",
 	Callback = function()
 		local tween = tweenService:Create(game.Workspace.Parttt,tweenInfo,goal)
