@@ -252,7 +252,7 @@ parta3.Anchored = true
 parta3.CanCollide = false
 parta3.BrickColor = BrickColor.new("New Yeller")
 
-local Paragraph = teleportTab:CreateParagraph({Title = "MHKZ hub", Content = "MHKZ hub"})
+local Paragraph = teleportTab:CreateParagraph({Title = "MHKZ hubbbbb", Content = "MHKZ hub"})
 
 
 local Button = teleportTab:CreateButton({
