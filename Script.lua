@@ -208,7 +208,7 @@ local Paragraph = teleportTab:CreateParagraph({Title = "bot chya ?? / bra auto f
 local Button = teleportTab:CreateButton({
 	Name = "blocke 2 spawn ka ",
 	Callback = function()
-		parta2.Position = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):FindFirstChild("HumanoidRootPart").Position
+		parta2.Position = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position
 	end,
 })
 
@@ -258,7 +258,7 @@ local Paragraph = teleportTab:CreateParagraph({Title = "MHKZ hub", Content = "MH
 local Button = teleportTab:CreateButton({
 	Name = "blocke 3 spawn ka ",
 	Callback = function()
-		parta3.Position = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):FindFirstChild("HumanoidRootPart").Position
+		parta3.Position = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position
 	end,
 })
 
