@@ -149,11 +149,12 @@ local teleportTab = Window:CreateTab("Teleports", nil) -- Title, Image
 local Label = teleportTab:CreateLabel("to de blocke dayne jhake o de teleport be blocke", nil, Color3.fromRGB(66, 218, 24), false) -- Title, Icon, Color, IgnoreTheme
 local Label = teleportTab:CreateLabel("hndak yarya shol nakt !", nil, Color3.fromRGB(218, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
-
+--parta 1-------------
 local partama = Instance.new("Part")
 partama.Parent = workspace
 partama.Anchored = true
 partama.CanCollide = false
+partama.BrickColor = BrickColor.new("Lime green")
 
 
 
@@ -179,7 +180,7 @@ local tweenInfo = TweenInfo.new(4)
 
 
 local Button = teleportTab:CreateButton({
-	Name = "Bche nk blocke",
+	Name = "bfre nk blocke",
 	Callback = function()
 		local goal = {
 			
@@ -192,3 +193,69 @@ local Button = teleportTab:CreateButton({
 	end,
 })
 
+
+-- parta 2--------
+local parta2 = Instance.new("Part")
+parta2.Parent = workspace
+parta2.Anchored = true
+parta2.CanCollide = false
+parta2.BrickColor = BrickColor.new("Really blue")
+
+local Section = teleportTab:CreateSection("bot")
+
+local Paragraph = teleportTab:CreateParagraph({Title = "bot chya ?? / bra auto farma de bezhye hare vere o hara wera ha o de kt", Content = "MHKZ hub"})
+
+local Button = teleportTab:CreateButton({
+	Name = "blocke 2 spawn ka ",
+	Callback = function()
+		parta2.Position = game.Players.LocalPlayer.Character.humanoidrootpart.Position
+	end,
+})
+
+
+
+local Toggle = teleportTab:CreateToggle({
+	Name = "bot e blocke 2 / player ta decht blocke 2 !",
+	CurrentValue = false,
+	Flag = "Toggle1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+		local bot1 = Value
+		if bot1 == true then
+			local humanoid = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+			local character = game.Players.LocalPlayer.Character
+			
+			if character and humanoid then
+				humanoid:MoveTo(parta2.Position)
+				
+			end
+			
+		end
+		
+	end,
+})
+
+
+
+
+
+
+
+
+
+
+
+
+--parta 3----------
+local parta3 = Instance.new("Part")
+parta3.Parent = workspace
+parta3.Anchored = true
+parta3.CanCollide = false
+parta3.BrickColor = BrickColor.new("New Yeller")
+
+
+local Button = teleportTab:CreateButton({
+	Name = "blocke 3 spawn ka ",
+	Callback = function()
+		parta3.Position = game.Players.LocalPlayer.Character.humanoidrootpart.Position
+	end,
+})
