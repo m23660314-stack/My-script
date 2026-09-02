@@ -252,6 +252,8 @@ parta3.Anchored = true
 parta3.CanCollide = false
 parta3.BrickColor = BrickColor.new("New Yeller")
 
+local Paragraph = Tab:CreateParagraph({Title = "MHKZ hub", Content = "MHKZ hub"})
+
 
 local Button = teleportTab:CreateButton({
 	Name = "blocke 3 spawn ka ",
@@ -259,3 +261,4 @@ local Button = teleportTab:CreateButton({
 		parta3.Position = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):FindFirstChild("HumanoidRootPart")
 	end,
 })
+
