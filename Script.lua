@@ -208,7 +208,7 @@ local Paragraph = teleportTab:CreateParagraph({Title = "bot chya ?? / bra auto f
 local Button = teleportTab:CreateButton({
 	Name = "blocke 2 spawn ka ",
 	Callback = function()
-		parta2.Position = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):FindFirstChild("HumanoidRootPart")
+		parta2.Position = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):FindFirstChild("HumanoidRootPart").Position
 	end,
 })
 
@@ -252,13 +252,13 @@ parta3.Anchored = true
 parta3.CanCollide = false
 parta3.BrickColor = BrickColor.new("New Yeller")
 
-local Paragraph = Tab:CreateParagraph({Title = "MHKZ hub", Content = "MHKZ hub"})
+local Paragraph = teleportTab:CreateParagraph({Title = "MHKZ hub", Content = "MHKZ hub"})
 
 
 local Button = teleportTab:CreateButton({
 	Name = "blocke 3 spawn ka ",
 	Callback = function()
-		parta3.Position = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):FindFirstChild("HumanoidRootPart")
+		parta3.Position = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):FindFirstChild("HumanoidRootPart").Position
 	end,
 })
 
