@@ -224,26 +224,21 @@ local Toggle = teleportTab:CreateToggle({
 			local humanoid = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
 			local character = game.Players.LocalPlayer.Character
 			
-			if character and humanoid then
-				humanoid:MoveTo(parta2.Position)
+			while task.wait(0.2)  do
+				if character and humanoid then
+					humanoid:MoveTo(parta2.Position)
+
+				end
+				
 				
 			end
+			
 			
 		end
 		
 	end,
 })
-
-
-
-
-
-
-
-
-
-
-
+*--
 
 --parta 3----------
 local parta3 = Instance.new("Part")
@@ -252,7 +247,7 @@ parta3.Anchored = true
 parta3.CanCollide = false
 parta3.BrickColor = BrickColor.new("New Yeller")
 
-local Paragraph = teleportTab:CreateParagraph({Title = "MHKZ hubbbbb", Content = "MHKZ hub"})
+local Paragraph = teleportTab:CreateParagraph({Title = "MHKZ hub ye dheta update krn!!", Content = "MHKZ hub"})
 
 
 local Button = teleportTab:CreateButton({
