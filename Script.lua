@@ -224,14 +224,14 @@ local Toggle = teleportTab:CreateToggle({
 			local humanoid = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
 			local character = game.Players.LocalPlayer.Character
 			
-			while task.wait(0.2)  do
-				if character and humanoid then
-					humanoid:MoveTo(parta2.Position)
+			
+			if character and humanoid then
+				humanoid:MoveTo(parta2.Position)
 
-				end
-				
-				
 			end
+				
+				
+			
 			
 			
 		end
