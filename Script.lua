@@ -238,7 +238,7 @@ local Toggle = teleportTab:CreateToggle({
 		
 	end,
 })
-*--
+
 
 --parta 3----------
 local parta3 = Instance.new("Part")
