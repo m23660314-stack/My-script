@@ -128,7 +128,7 @@ end)
 
 local Slider = MainTab:CreateSlider({
 	Name = "Nezeke o deratya camere",
-	Range = {0, 250},
+	Range = {0, 120},
 	Increment = 1,
 	Suffix = "",
 	CurrentValue = 70,
@@ -171,8 +171,90 @@ local Button = teleportTab:CreateButton({
 	Name = "teleport be blocke ",
 	Callback = function()
 		game.Players.LocalPlayer.Character.HumanoidRootPart.Position = partama.Position
+		
 	end,
 })
+
+local Button = teleportTab:CreateButton({
+	Name = "shashak jda bo teleporte",
+	Callback = function()
+		local Players = game:GetService("Players")
+
+		local player = Players.LocalPlayer
+		local playerGui = player:WaitForChild("PlayerGui")
+
+		-- ScreenGui
+		local gui = Instance.new("ScreenGui")
+		gui.Name = "TeleportGui"
+		gui.ResetOnSpawn = false
+		gui.Parent = playerGui
+
+		-- Main window
+		local frame = Instance.new("Frame")
+		frame.Size = UDim2.new(0, 217, 0, 126)
+		frame.Position = UDim2.new(0.5, -108, 0.5, -63)
+		frame.BackgroundColor3 = Color3.fromRGB(130, 130, 130)
+		frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		frame.BorderSizePixel = 1
+		frame.Parent = gui
+
+		-- Top bar
+		local topBar = Instance.new("Frame")
+		topBar.Size = UDim2.new(1, 0, 0, 29)
+		topBar.Position = UDim2.new(0, 0, 0, 0)
+		topBar.BackgroundColor3 = Color3.fromRGB(190, 190, 190)
+		topBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		topBar.BorderSizePixel = 1
+		topBar.Parent = frame
+
+		-- Drag detector
+		local move = Instance.new("UIDragDetector")
+		move.Parent = frame
+
+		-- X button
+		local closeButton = Instance.new("TextButton")
+		closeButton.Size = UDim2.new(0, 37,0, 24)
+		closeButton.Position = UDim2.new(1, -40,0, 2)
+		closeButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		closeButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		closeButton.BorderSizePixel = 1
+		closeButton.Text = "X"
+		closeButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+		closeButton.TextSize = 24
+		closeButton.Font = Enum.Font.GothamBold
+		closeButton.Parent = frame
+
+		-- Teleport button
+		local teleportButton = Instance.new("TextButton")
+		teleportButton.Size = UDim2.new(0, 184, 0, 40)
+		teleportButton.Position = UDim2.new(0.5, -92, 0, 48)
+		teleportButton.BackgroundColor3 = Color3.fromRGB(55, 205, 20)
+		teleportButton.BorderSizePixel = 0
+		teleportButton.Text = "Teleport"
+		teleportButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+		teleportButton.TextSize = 32
+		teleportButton.Font = Enum.Font.GothamBold
+		teleportButton.Parent = frame
+
+		-- Rounded corners
+		local corner = Instance.new("UICorner")
+		corner.CornerRadius = UDim.new(0, 10)
+		corner.Parent = teleportButton
+
+		-- Close GUI
+		closeButton.MouseButton1Click:Connect(function()
+			gui:Destroy()
+		end)
+
+		-- Teleport
+		teleportButton.MouseButton1Click:Connect(function()
+			game.Players.LocalPlayer.Character.HumanoidRootPart.Position = partama.Position
+		end)
+	end,
+})
+
+
+
 
 local tweenService = game:GetService("TweenService")
 local tweenInfo = TweenInfo.new(4)
